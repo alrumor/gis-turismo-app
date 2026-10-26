@@ -18,7 +18,11 @@ from shell import build_shell
 
 
 def server(input: Inputs, output: Outputs, session: Session) -> None:
-    ui.HTML(build_shell(DATA.meta))
+    ui.insert_ui(
+        selector="body",
+        where="beforeEnd",
+        ui=ui.HTML(build_shell(DATA.meta))
+    )
 
     # ========================================================================
 

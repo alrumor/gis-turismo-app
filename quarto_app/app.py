@@ -44,7 +44,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     return None
 
 
-_static_assets = ["index_files","index_files\\libs\\quarto-html\\tippy.css","index_files\\libs\\quarto-html\\quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css","index_files\\libs\\bootstrap\\bootstrap-icons.css","index_files\\libs\\bootstrap\\bootstrap-215b371544c282197b31c8aa00ce3677.min.css","index_files\\libs\\clipboard\\clipboard.min.js","index_files\\libs\\quarto-html\\quarto.js","index_files\\libs\\quarto-html\\tabsets\\tabsets.js","index_files\\libs\\quarto-html\\popper.min.js","index_files\\libs\\quarto-html\\tippy.umd.min.js","index_files\\libs\\quarto-html\\anchor.min.js","index_files\\libs\\bootstrap\\bootstrap.min.js"]
+_static_assets = ["index_files","quarto_app\\index_files\\libs\\quarto-html\\tippy.css","quarto_app\\index_files\\libs\\quarto-html\\quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css","quarto_app\\index_files\\libs\\bootstrap\\bootstrap-icons.css","quarto_app\\index_files\\libs\\bootstrap\\bootstrap-215b371544c282197b31c8aa00ce3677.min.css","quarto_app\\index_files\\libs\\clipboard\\clipboard.min.js","quarto_app\\index_files\\libs\\quarto-html\\quarto.js","quarto_app\\index_files\\libs\\quarto-html\\tabsets\\tabsets.js","quarto_app\\index_files\\libs\\quarto-html\\popper.min.js","quarto_app\\index_files\\libs\\quarto-html\\tippy.umd.min.js","quarto_app\\index_files\\libs\\quarto-html\\anchor.min.js","quarto_app\\index_files\\libs\\bootstrap\\bootstrap.min.js"]
 _static_assets = {"/" + sa: Path(__file__).parent / sa for sa in _static_assets}
 
 app = App(

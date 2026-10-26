@@ -1,0 +1,16 @@
+# Dependencias directas de la aplicación.
+# Versiones verificadas con Python 3.14.3, Quarto 1.10.18 y Shiny 1.8.0.
+
+shiny==1.8.0
+pandas==3.1.0
+numpy==2.5.4
+openpyxl==3.1.5
+pyproj==3.8.0
+tifffile==2026.10.15
+pillow==13.0.0
+
+# Kernel usado por Quarto para ejecutar index.qmd.
+ipykernel==7.4.0
+jupyter-client==8.10.0
+nbclient==0.11.0
+nbformat==5.11.1

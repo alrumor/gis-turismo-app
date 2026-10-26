@@ -1,0 +1,50 @@
+---
+title: "Visibilidad algorítmica · Sevilla"
+format:
+  html:
+    page-layout: custom
+    include-in-header: _head.html
+    toc: false
+    code-fold: false
+    code-tools: false
+    fig-cap-location: bottom
+server: shiny
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{python}
+#| context: setup
+#| echo: false
+from shiny.express import ui, input, session
+from shiny import reactive
+
+from app_data import DATA
+from shell import build_shell
+```
+
+```{python}
+#| panel: fill
+#| echo: false
+ui.HTML(build_shell(DATA.meta))
+```
+
+```{python}
+#| echo: false
+@reactive.effect
+async def _push_payload():
+    ready = input.client_ready()
+    if ready is None:
+        return
+    filters = input.filters()
+    try:
+        payload = DATA.payload(filters)
+    except Exception as exc:  # pragma: no cover - se informa en la interfaz
+        await session.send_custom_message(
+            "app_error", {"message": f"No se pudieron aplicar los filtros: {exc}"}
+        )
+        return
+    await session.send_custom_message("app_payload", payload)
+```
